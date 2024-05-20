@@ -7,11 +7,17 @@ from sqlalchemy.ext.declarative import declarative_base
 
 from sqlalchemy.orm import relationship
 
-from sqlalchemy import create_engine
+from sqlalchemy import create_engine, text
 
 
-HearYouNow_DB = declarative_base()
+engine = create_engine('mysql+pymysql://root:root@localhost') # mysql 접속
+with engine.connect() as conn:
+    conn.execute(text("CREATE DATABASE IF NOT EXISTS HearYouNow")) # database가 없으면 생성
+    
+engine = create_engine('mysql+pymysql://root:root@localhost/HearYouNow') # database를 연결
 
+
+HearYouNow_DB = declarative_base() # database 선언
 
 class USER(HearYouNow_DB):
     __tablename__ = 'user'
@@ -91,5 +97,4 @@ class EXPERTAGENCY(HearYouNow_DB):
 
 ##### insert at end of file #####
 
-engine = create_engine('mysql+pymysql://root:root@localhost/HearYouNow')
 HearYouNow_DB.metadata.create_all(engine)
