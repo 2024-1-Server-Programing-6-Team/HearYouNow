@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Page Layout</title>
+    <link rel="stylesheet" href="../../static/main/styles.css">
+</head>
+<body>
+    <header class="top-nav-bar">
+        <button class="menu-btn" onclick="toggleSidebar()">&#9776;</button>
+        <div class="logo">
+            <h2><img src="../../static/img/logo.png" alt="HearYouNow">HearYouNow</h2>
+
+        </div>
+        <a href="{{ url_for('login_views.login') }}"><button class="login-btn">로그인</button></a>
+    </header>
+
+    <main class="main-layout">
+        <aside class="side-nav-bar closed" id="sidebar">
+            <div class="profile-area">
+                <h3 class="profile_title">프로필</h3>
+            </div>
+
+            <nav>
+                <h3>게시판</h3>
+                <ul>
+                    <li><a href="#" onclick="navigate('deep-worry')">깊은 고민 상담소</a></li>
+                    <li><a href="#" onclick="navigate('shallow-worry')">얕은 고민 상담소</a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <section class="main-content-area expanded" id="main-content">
+            <!-- Content dynamically changes here -->
+        </section>
+    </main>
+
+    <script src="../../static/main/app.js"></script>
+</body>
+</html>
