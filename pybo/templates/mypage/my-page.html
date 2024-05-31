@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>My Page</title>
+    <link rel="stylesheet" href="/static/mypage/mypage.css">
+</head>
+<body>
+    <header class="top-nav-bar">
+        <button class="menu-btn" onclick="toggleSidebar()">&#9776;</button>
+        <div class="logo">
+            <img src="/static/img/logo.png" alt="Logo">
+        </div>
+        <button class="login-btn">로그아웃</button>
+    </header>
+
+    <main class="main-layout">
+        <aside class="side-nav-bar">
+            <div class="profile-area">
+                <h2>마이페이지</h2>
+                <ul>
+                    <li><a href="#edit-profile">개인 정보 수정</a></li>
+                    <li><a href="#my-posts">작성 글 / 댓글 조회</a></li>
+                    <li><a href="#liked-posts">좋아요 누른 글</a></li>
+                </ul>
+                <button class="logout-btn">로그아웃</button>
+            </div>
+        </aside>
+        <section class="main-content-area">
+            <div class="logo-banner">
+                <img src="path/to/logo-banner.png" alt="Logo Banner">
+            </div>
+            <div class="edit-profile-container">
+                <h2>Edit profile</h2>
+                <div class="profile-picture">
+                    <img src="path/to/profile-picture.png" alt="Profile Picture">
+                    <span>Helena Hills</span>
+                    <a href="#" class="change-profile-photo">Change profile photo</a>
+                </div>
+                <form>
+                    <label for="nick-name">Nick name</label>
+                    <input type="text" id="nick-name" value="@username123">
+                    
+                    <label for="email">Email</label>
+                    <input type="email" id="email" value="email@domain.com">
+                    
+                    <label for="bio">Bio</label>
+                    <textarea id="bio">I am a designer based in Philadelphia, making great software at Figma.</textarea>
+                    
+                    <button type="submit" class="save-changes-btn">Save changes</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        function toggleSidebar() {
+            const sidebar = document.getElementById('sidebar');
+            sidebar.classList.toggle('closed');
+            document.querySelector('.main-content-area').classList.toggle('full-width');
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Write Post</title>
+    <link rel="stylesheet" href="../../static/posting/styles.css">
+</head>
+<body>
+    <header class="top-nav-bar">
+        <button class="menu-btn" onclick="toggleSidebar()">&#9776;</button>
+        <div class="logo">
+            <img src="path/to/logo.png" alt="Logo">
+        </div>
+        <button class="login-btn">로그아웃</button>
+    </header>
+
+    <main class="main-layout">
+        <aside class="side-nav-bar" id="sidebar">
+            <div class="profile-area">
+                <h2>프로필</h2>
+                <p>환영합니다, User01!</p>
+                <button class="logout-btn">로그아웃</button>
+            </div>
+            <nav class="side-nav">
+                <ul>
+                    <li><a href="#">깊은 고민 상담소</a></li>
+                    <li><a href="#">얕은 고민 상담소</a></li>
+                </ul>
+            </nav>
+        </aside>
+        <section class="main-content-area">
+            <div class="logo-banner">
+                <img src="path/to/logo-banner.png" alt="Logo Banner">
+            </div>
+            <div class="write-post-container">
+                <h2>게시글 작성</h2>
+                <form>
+                    <label for="post-title">글 제목</label>
+                    <input type="text" id="post-title" placeholder="글 제목을 입력하세요...">
+                    
+                    <label for="category-select">카테고리</label>
+                    <select id="category-select">
+                        <option>깊은 고민 상담소</option>
+                        <option>얕은 고민 상담소</option>
+                    </select>
+                    
+                    <label for="post-content">Bio</label>
+                    <textarea id="post-content" placeholder="내용을 입력하세요..."></textarea>
+                    
+                    <button type="submit" class="submit-post-btn">글 등록</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        function toggleSidebar() {
+            const sidebar = document.getElementById('sidebar');
+            sidebar.classList.toggle('closed');
+            document.querySelector('.main-content-area').classList.toggle('full-width');
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sign Up Page</title>
+    <link rel="stylesheet" href="/login/signup.css">
+</head>
+<body>
+    <header class="top-nav-bar">
+        <button class="menu-btn" onclick="toggleSidebar()">&#9776;</button>
+        <div class="logo">
+            <img src="path/to/logo.png" alt="Logo">
+        </div>
+        <button class="login-btn">Login</button>
+    </header>
+
+    <main class="main-layout">
+        <aside class="side-nav-bar closed" id="sidebar">
+            <div class="profile-area">
+                <h2>Profile</h2>
+                <p>Welcome, User!</p>
+            </div>
+            <nav class="side-nav">
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Calendar</a></li>
+                    <li><a href="#">Settings</a></li>
+                </ul>
+            </nav>
+        </aside>
+        <section class="main-content-area full-width">
+            <div class="logo-banner">
+                <img src="path/to/logo-banner.png" alt="Logo Banner">
+                <div class="signup-banner">
+                    <p>우리와 함께 하세요</p>
+                    <p>서비스를 통해 더 나은 기회를 만드세요<br>(회원가입하여 탁월한 서비스를 경험하세요)</p>
+                </div>
+            </div>
+            <div class="signup-page">
+                <h1>회원가입 페이지</h1>
+                <form class="signup-form">
+                    <label for="username">User Name</label>
+                    <input type="text" id="username" name="username" placeholder="ID">
+                    
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" placeholder="PW">
+                    
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name" placeholder="이름">
+                    
+                    <button type="submit" class="signup-btn-black">Sign Up</button>
+                </form>
+                <p>이미 계정이 있으신가요? <a href="#">로그인</a></p>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        function toggleSidebar() {
+            const sidebar = document.getElementById('sidebar');
+            sidebar.classList.toggle('closed');
+            document.querySelector('.main-content-area').classList.toggle('full-width');
+        }
+    </script>
+</body>
+</html>
